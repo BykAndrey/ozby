@@ -10,7 +10,7 @@ sudo apt-get install php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0 php7.
    3. Сделать копию файла /etc/apache2/site-available/(000-default.conf|default.conf)
    4. Переименовать в site.conf
    5. Добавить это:
-      <br><VirtualHost *:80>
+     <br><VirtualHost *:80>
     	<br>ServerName site.local
     	<br>ServerAdmin webmaster@localhost
     	<br>DocumentRoot /var/www/site/public
@@ -21,8 +21,8 @@ sudo apt-get install php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0 php7.
                   <br>  AllowOverride All
                   <br>  Order allow,deny
                   <br>  allow from all
-    <br></Directory>
-    <br></VirtualHost>
+                   <br> </ Directory>
+                   <br>  </ VirtualHost>  <br> 
     # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
    6. Выполнить sudo a2ensite site
    7. Откройте файл /etc/hosts и добавте 127.0.0.1   site.local
