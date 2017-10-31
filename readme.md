@@ -1,27 +1,50 @@
-# Laravel PHP Framework
+# Тестовое задание Oz.by
+#####Используется php7.0 . Laravel 5.2 Framework . так же корректно работает в php5.6
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+##Установка
+sudo apt-get install php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-gd php7.0-bz2
+###Исходный код (Apache2 Debian):
+   1. Скопировать все файлы в /var/www/site
+   2. Установть права на запись если сбились (без валокиты можно  sudo chmod -R 777 site 
+    и sudo chmod -R 777 site/*)
+   3. Сделать копию файла /etc/apache2/site-available/(000-default.conf|default.conf)
+   4. Переименовать в site.conf
+   5. Добавить это:
+      <br><VirtualHost *:80>
+    	<br>ServerName site.local
+    	<br>ServerAdmin webmaster@localhost
+    	<br>DocumentRoot /var/www/site/public
+    	<br>ErrorLog ${APACHE_LOG_DIR}/error.log
+    	<br>CustomLog ${APACHE_LOG_DIR}/access.log combined
+   <br> <Directory /var/www/site>
+                  <br>  Options Indexes FollowSymLinks MultiViews
+                  <br>  AllowOverride All
+                  <br>  Order allow,deny
+                  <br>  allow from all
+    <br></Directory>
+    <br></VirtualHost>
+    # vim: syntax=apache ts=4 sw=4 sts=4 sr noet
+   6. Выполнить sudo a2ensite site
+   7. Откройте файл /etc/hosts и добавте 127.0.0.1   site.local
+   8. sudo service apache2 reload
+   
+   ####Если не открывается site.local/phpmyadmin
+   1. Открыть /etc/apache2/
+   2. Добавть в конец файла Include /etc/phpmyadmin/apache.conf
+###База данных:
+   1. Создать БД в phpmyadmin
+   2. Открыть вкладку SQL и добавть туда sql из siteoz(1).sql (в папке с иходным кодом)
+   1. Нажать Go
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
 
-## Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+#Подгатовка сайта
+1. Откройте файл .env в папке сайта
+2. Замените данные DB_DATABASE=ИМЯ_БД
+                   DB_USERNAME=USER
+                   DB_PASSWORD=PASS
+3. Откройте файл /config/database.php 
+    и заменить в массие connections->mysql 
+                'database' => env('DB_DATABASE', 'ИМЯ_БД'),
+                'username' => env('DB_USERNAME', 'USER'),
+                'password' => env('DB_PASSWORD', 'PASS'),
