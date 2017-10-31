@@ -2,7 +2,7 @@
 ##### Используется php7.0 . Laravel 5.2 Framework . так же корректно работает в php5.6
 
 ## Установка
-sudo apt-get install php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-gd php7.0-bz2
+sudo apt-get install php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-mbstring phpmyadmin 
 ### Исходный код (Apache2 Debian):
    1. Скопировать все файлы в /var/www/site
    2. Установть права на запись если сбились (без валокиты можно  sudo chmod -R 777 site 
