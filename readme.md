@@ -1,9 +1,9 @@
 # Тестовое задание Oz.by
-#####Используется php7.0 . Laravel 5.2 Framework . так же корректно работает в php5.6
+##### Используется php7.0 . Laravel 5.2 Framework . так же корректно работает в php5.6
 
-##Установка
+## Установка
 sudo apt-get install php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0 php7.0-mysql php7.0-fpm php7.0-curl php7.0-gd php7.0-bz2
-###Исходный код (Apache2 Debian):
+### Исходный код (Apache2 Debian):
    1. Скопировать все файлы в /var/www/site
    2. Установть права на запись если сбились (без валокиты можно  sudo chmod -R 777 site 
     и sudo chmod -R 777 site/*)
@@ -28,17 +28,17 @@ sudo apt-get install php7.0-cli php7.0-common libapache2-mod-php7.0 php7.0 php7.
    7. Откройте файл /etc/hosts и добавте 127.0.0.1   site.local
    8. sudo service apache2 reload
    
-   ####Если не открывается site.local/phpmyadmin
+   #### Если не открывается site.local/phpmyadmin
    1. Открыть /etc/apache2/
    2. Добавть в конец файла Include /etc/phpmyadmin/apache.conf
-###База данных:
+### База данных:
    1. Создать БД в phpmyadmin
    2. Открыть вкладку SQL и добавть туда sql из siteoz(1).sql (в папке с иходным кодом)
    1. Нажать Go
 
 
 
-#Подгатовка сайта
+# Подгатовка сайта
 1. Откройте файл .env в папке сайта
 2. Замените данные DB_DATABASE=ИМЯ_БД
                    DB_USERNAME=USER
