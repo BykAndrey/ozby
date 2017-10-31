@@ -1,0 +1,59 @@
+
+.profile table.list,.cart table.list{
+    width: 100%;
+}
+.profile table.list tr,.cart table.list tr{
+    border-bottom: 1px solid grey;
+}
+.profile table.list img,.cart table.list img{
+    max-width: 200px;
+    max-height: 200px;
+}
+/*listing item*/
+.listingItem{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.listingItem>.item{
+    width: 200px;
+
+}
+.listingItem>.item .image{
+    width: 200px;
+    height: 150px;
+    background-position: 50%;
+    background-size: cover;
+}
+
+.listingItem>.item .price{
+    color:#5bc0de;
+}
+.card{
+flex-direction: row;
+
+}
+.card .image{
+
+}
+.card .image img{
+width: 100%;
+}
+.card .info{
+
+}
+.card form{
+    text-align: right;
+
+
+}
+.card  .price{
+width: 100%;
+}
+.card .description{
+
+}
+
+
+/*
+End listiing item*/
